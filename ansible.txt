@@ -1,0 +1,5 @@
+on 31/01/23
+
+
+today i've learned what is configuration management tools ,types of configuation management tool {push based , pull based }
+config management is part of operations.
