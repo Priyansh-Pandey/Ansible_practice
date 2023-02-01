@@ -3,3 +3,60 @@ on 31/01/23
 
 today i've learned what is configuration management tools ,types of configuation management tool {push based , pull based }
 config management is part of operations. what is IAC
+
+
+
+on 1/02/23
+
+today we've installed some packages on our local machine which is going to be the ansibel server for the lab practice, so the the link for install ing the packages is  {https://dl.fedoraproject.org/pub/epel/ } paste this on your browser and then copy the link of package, depending on your os of your vm , mine was rhel 9 so for me the packages was {https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm} and {https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm}
+
+you can download the packages on your local machines through {wget} command and the install these packages using {yum insatll -y and the rmp you want to install, which you can check using the ls command}  and now  update your machine using the {yum update-y } command. now we to install some dependencies like  the python, python-level, python-pip, openssl, ansible, git.
+
+
+now to we need to add the private IPs of the nodes in the ansible server so that the ansibel server can know how many nodes are  connected with it. for this we have a defauly file in anibleserver called the {host} location [vi /etc/ansible/hosts]. here you can paste Private  IPs of the nodes,  examlpes are already present in the host file for refrences.  nw edit and save the hosts file.
+
+but this host file dosen't work on its own for this we need to provide it with the root permissions this can done through the configuration file locaion of this file is {vi /etc/ansible/ansible.cfg} here you'll see some scripts 
+
+here you'll see commented scripts
+                                 
+                                 #inventory = /etc/ansible/hosts
+                                 #sudo-user = root                    
+
+uncomment them, save and exit.
+
+
+but still the connection between the ansible server and the nodes is not established, you cannot push any codes to the nodes
+so instead of given  the root user password you can create an user for the ansibel server and this user password can share with the  employess in the real time, 
+
+
+so in todays lab  we'll also create  users in our local machine and on the cloud servers {2}  and well perform  task through  this user .
+
+
+
+
+now for the user to perform various tasks we need to give  the users the rights and permissions now after creating the ansible user and now for the most important command is {su - ansible} rememver this for logging into user ansible server.
+
+
+well right now this ansible user dosen't have the root privelidge, so for this use {visudo} command  inside this file you'll find a line 
+
+
+root ALL= (ALL) (ALL)
+
+
+here we need to add 
+
+
+ansible ALL =(ALL) NOPASSWD:ALL
+
+save it
+
+
+
+
+
+perform this task on  all the nodes and the ansibel server.now you need to establesh the connection between the ansible server and the nodes for that {ssh private IP of node} but i'll say permisssion denied, because we havent configure the ssh
+
+
+
+go to {vi /etc/ssh/sshd_congig } do some changes in this file and now do this same thing in the all the nodes and done conection is established between ansible server and nodes  
+ 
