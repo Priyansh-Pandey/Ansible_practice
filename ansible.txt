@@ -59,4 +59,12 @@ perform this task on  all the nodes and the ansibel server.now you need to estab
 
 
 go to {vi /etc/ssh/sshd_congig } do some changes in this file and now do this same thing in the all the nodes and done conection is established between ansible server and nodes  
- 
+
+
+
+
+on 02/02/2023
+
+
+
+the local machine is not working as ansible server, may be because of the update, so i've made the one of  the node as asible server and now well establish the ssh connection between the node and ansible server 
