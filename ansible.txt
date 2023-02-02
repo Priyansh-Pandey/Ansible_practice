@@ -68,3 +68,41 @@ on 02/02/2023
 
 
 the local machine is not working as ansible server, may be because of the update, so i've made the one of  the node as asible server and now well establish the ssh connection between the node and ansible server 
+
+P.S the local machne is not working as a node so i'm remocing it fro the host and might try it with rhel 8
+
+now the connection through ssh was sccessful but the its asking for the passwd every logging time, and thtas a problem cz it'll keep on asking me for the passwd each time i try to push some update to the server, then what?
+
+
+
+so the solutio for this is we can generate a key into our ansible server and paste that key on ourb nodes, command (ssh-keygen)
+this process is know as establising Trust Relationship , and this is of an equal leavel meaning the root will establish trust relationship with root and ause with user.
+
+
+ so before making the ssh-keygen make sudure you're loggedin as ansible user in both ansible server and the nodes, 
+ 
+ now the ssh key is been generated to check cd /home/ansible/.ssh
+ here you'll see (id_rsa , id_rsa.pub , known_hosts).
+ 
+ 
+ now to copy the key in the nodes simply use the command (ssh-copy-id ansible@{private ip of your node} and enter.
+ 
+ it'll ask you for the passwd one more time, and thats it now when do ssh cooonection it won't ask for the passwd and now you can push any fie and update to the nodes without any passwd this is the concept of trust relationship.
+ 
+ 
+ 
+ and the last topic for today's session is the {Host pattern}.
+ 
+ 
+ suppose you have 10 nodes connected with your ansible sserver and you want to puch the update on the specific nodes instd of pushing it in al the nodes then what?
+ or i need to push updates to a partical groups eg. demo?
+ 
+ so  to check number of nodes coonectied with ansble server (ansible all --list-host)
+ for nodes in particular group like demo then use (ansible {groupname} --list-host).
+ and if you wish to know the specidic nodes in a partical grop top/bottom use comamnd (ansible host[0] --list-host)
+ 
+ 0 for the top node and -1 for the last node.
+ we can also add rnge like (ansible[1:4] --list-host)
+ 
+ 
+ that's  it for today
