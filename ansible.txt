@@ -58,7 +58,7 @@ perform this task on  all the nodes and the ansibel server.now you need to estab
 
 
 
-go to {vi /etc/ssh/sshd_congig } do some changes in this file and now do this same thing in the all the nodes and done conection is established between ansible server and nodes  
+go to {vi /etc/ssh/sshd_congig } here uncomment (permitrootlogin) in this file and now do this same thing in the all the nodes and done conection is established between ansible server and nodes  ans we need to restart the ssh for connection to be working properly so for that use command (service sshd restart) do this in the nodes and the ansible server.
 
 
 
@@ -106,3 +106,10 @@ this process is know as establising Trust Relationship , and this is of an equal
  
  
  that's  it for today
+
+
+on 03/02/23
+
+I've tried to installl the ansibel server on our local machines and it was a disaster so, in  the the end i've terminated all the server and and recreate the and perform all the above process againg and again i need to say that i do need lot of practice, i was forgetting most of the steps which was causing the errors
+
+but the it all go so good-night for today
