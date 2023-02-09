@@ -121,4 +121,68 @@ but the it all go so good-night for today.
 on 09/02/23
 
 
-we well study wwhat are Ad-hok commands, Modules, and Playbooks, and how to execute them.
+we well study wwhat are Ad-hok commands, Modules, and Playbooks, and how to execute them
+
+
+
+
+
+
+so the basic difference between the Ad-hok commands and Modules is that, there is no idempotency in the Ad-hok commands and it'll keep on override the tasks
+thats wy we dont use the Ad-hok commands on the permanenet basis and they are use for the temprary tasks.
+
+
+and ps I'm using the solar putty and its is much better than the putty cause the connection does not terminate again and again.
+
+
+spoke too soon the connection here also disconnects but reconnection is faster and more better than the putty.
+
+
+
+so to use the ad-hok commands 
+
+
+[ansible@IP] ansible    demo            -a          "ls"
+                    {group-name}  {arguments} {linux command} 
+                       
+
+
+
+[ansible@IP] ansible demo -a "sudo install httpd -y"
+
+
+but if dont want to type sudo you can use -b {become} 
+
+
+
+like [ansible@IP] ansible demo -ba "yum install httpd -y"
+
+
+you can also use host pattern for customize the command for the specific nodes
+
+
+like [ansible@IP] ansible           demo[0]    -a "sudo install httpd -y"
+                            {for the 1st node}
+
+
+
+
+
+and [ansible@IP] ansible      demo[-1]          -a "sudo install httpd -y"
+                         {for the last node}
+
+
+
+
+
+and [ansible@IP] ansible         demo[0:4]        -a "sudo install httpd -y"
+                        {for range of server 1-5} 
+
+
+
+
+
+
+
+and as you can see there is no idempodency in Ad-hok commands
+
