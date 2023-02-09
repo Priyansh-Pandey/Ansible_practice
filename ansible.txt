@@ -112,4 +112,13 @@ on 03/02/23
 
 I've tried to installl the ansibel server on our local machines and it was a disaster so, in  the the end i've terminated all the server and and recreate the and perform all the above process againg and again i need to say that i do need lot of practice, i was forgetting most of the steps which was causing the errors
 
-but the it all go so good-night for today
+but the it all go so good-night for today.
+
+
+
+
+
+on 09/02/23
+
+
+we well study wwhat are Ad-hok commands, Modules, and Playbooks, and how to execute them.
