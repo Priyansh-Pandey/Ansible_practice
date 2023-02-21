@@ -184,5 +184,32 @@ and [ansible@IP] ansible         demo[0:4]        -a "sudo install httpd -y"
 
 
 
-and as you can see there is no idempodency in Ad-hok commands
+and as you can see there is no idempodency in Ad-hok commands, and it'l keep on overriting the current profile.
+
+
+on [21/02/23] 
+
+
+today we'll learn about the Ansible Modules, these are some predefine commands, which can be use as one-line as multiple modules in the form of playbooks it denoted by {-m} and the module we are using is written after -m 
+
+
+
+
+like for eg ansible demo -m yum -a  "pkg=httpd state=present" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
