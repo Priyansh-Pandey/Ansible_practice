@@ -79,7 +79,7 @@ so the solutio for this is we can generate a key into our ansible server and pas
 this process is know as establising Trust Relationship , and this is of an equal leavel meaning the root will establish trust relationship with root and ause with user.
 
 
- so before making the ssh-keygen make sudure you're loggedin as ansible user in both ansible server and the nodes, 
+ so before making the ssh-keygen make sure you're logged-in as ansible user in both [ansible server] and the [nodes], 
  
  now the ssh key is been generated to check cd /home/ansible/.ssh
  here you'll see (id_rsa , id_rsa.pub , known_hosts).
