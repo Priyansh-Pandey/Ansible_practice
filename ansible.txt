@@ -204,7 +204,11 @@ like for eg ansible demo -m yum -a  "pkg=httpd state=present"
 
 
 
+On [12/05/23] 
 
+
+i was again trying to configure Ansible but the packages was not installing because it was a new Amazon-Linux machine which was not
+ supporting  the Fedora packages of rhel so mak sure you are using amazon linux 2 and not the Amazon-Linux v2023 
 
 
 
